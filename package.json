@@ -9,9 +9,6 @@
   "bugs": {
     "url": "https://github.com/lukekarrys/ragnar-data/issues"
   },
-  "engines": {
-    "node": "^6.0.0"
-  },
   "dependencies": {
     "axios": "^0.15.2",
     "cli-table": "^0.3.1",
@@ -26,6 +23,9 @@
     "nock": "^9.0.2",
     "standard": "^8.5.0",
     "tape": "^4.6.2"
+  },
+  "engines": {
+    "node": "^6.0.0"
   },
   "homepage": "https://github.com/lukekarrys/ragnar-data#readme",
   "keywords": [
@@ -46,6 +46,7 @@
     "url": "git+ssh://git@github.com/lukekarrys/ragnar-data.git"
   },
   "scripts": {
+    "example": "./lib/cli.js --cache test/fixtures",
     "lint": "standard",
     "start": "node index",
     "test": "tape test/*.js | tap-format-spec",
