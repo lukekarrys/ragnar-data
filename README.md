@@ -18,32 +18,39 @@ npm install ragnar-data --global
 
 ## JS
 ```js
-const ragnar = require('ragnar-data')
+const ragnarData = require('ragnar-data')
 
-const getRagnar = ragnar({
+ragnarData({
+  // Filter the list of races (uses _.filter)
   filter: { type: 'trail' },
-  cache: path.resolve(__dirname, '.ragnar-data'),
+  // Pick which keys that will be in each result
   pick: ['name', 'elevation_gain', 'distance'],
-  // Omit is also available to blacklist certain keys
-  // omit: ['legs']
-  sort: ['elevation_gain', 'desc']
+  // Omit can also be used to blacklist certain keys
+  omit: ['legs']
+  // Sort the results (uses _.orderBy)
+  sort: ['elevation_gain', 'desc'],
+  // Will cache data to this directory and use it for subsequent runs
+  cache: path.resolve(__dirname, '.ragnar-data')
 })
-
-getRagnar
-  .then((races) => console.log(races))
-  .catch((err) => console.error(err))
+// Returns a promist
+.then((races) => console.log(races))
+.catch((err) => console.error(err))
 ```
 
 ### CLI
 ```sh
 ragnar-data \
-  --type trail \ # A shortcut for filtering based on type
-  # You can always use a properly encoded json object to filter like
-  # --filter '{"type": "trail"}'
+   # A shortcut for filtering based on type
+  --type trail \
+  # You can always use a properly encoded json object to filter
+  --filter '{"type": "trail"}' \
+  # Same as above
   --pick name,elevation_gain,distance \
+  --omit legs \
   --sort distance,desc \
   --cache .ragnar-data \
-  --output table # Can also be json or markdown
+  # How to output the CLI result [table, json, markdown]
+  --output table
 
 # See all the options
 ragnar-data --help
