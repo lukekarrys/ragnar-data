@@ -7,6 +7,8 @@ Get, format, filter, and sort the data for each Ragnar race.
 [![Build Status](https://travis-ci.org/lukekarrys/ragnar-data.png?branch=master)](https://travis-ci.org/lukekarrys/ragnar-data)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
+**Requires Node >=6**
+
 ## Install
 ```sh
 npm install ragnar-data --save
