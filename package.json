@@ -1,0 +1,45 @@
+{
+  "name": "ragnar-data",
+  "description": "Get Ragnar race data.",
+  "version": "1.0.0",
+  "author": "Luke Karrys <luke@lukekarrys.com>",
+  "bin": {
+    "ragnar-data": "./lib/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/lukekarrys/ragnar-data/issues"
+  },
+  "dependencies": {
+    "axios": "^0.15.2",
+    "fs-promise": "^0.5.0",
+    "lodash": "^4.16.6",
+    "yargs": "^6.3.0",
+    "yargs-parser": "^4.1.0"
+  },
+  "devDependencies": {
+    "git-validate": "^2.2.2",
+    "standard": "^8.5.0"
+  },
+  "homepage": "https://github.com/lukekarrys/ragnar-data#readme",
+  "keywords": [
+    "distance",
+    "elevation",
+    "ragnar",
+    "trail"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "pre-commit": [
+    "lint",
+    "validate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lukekarrys/ragnar-data.git"
+  },
+  "scripts": {
+    "lint": "standard",
+    "start": "node index",
+    "validate": "npm ls"
+  }
+}
