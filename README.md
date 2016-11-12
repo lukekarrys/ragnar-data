@@ -32,7 +32,8 @@ ragnarData({
   // Sort the results (uses _.orderBy)
   sort: ['elevation_gain', 'desc'],
   // Will cache data to this directory and use it for subsequent runs
-  cache: path.resolve(__dirname, '.ragnar-data')
+  // Defaults to prefixed path using env-paths.config
+  cache: path.resolve(__dirname, '.your-ragnar-data')
 })
 // Returns a promist
 .then((races) => console.log(races))
