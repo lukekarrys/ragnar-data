@@ -29,6 +29,24 @@ test('ragnar', (t) => {
   }).catch(t.end)
 })
 
+test('ragnar can refresh cache', (t) => {
+  mockFixture('/list/race')
+  mockFixture('/get/race/relay/delsol')
+
+  ragnar({
+    cache: FIXTURES_PATH,
+    refresh: true,
+    filter: { alias: 'delsol' }
+  }).then((races) => {
+    t.equal(races.length, 1)
+    t.equal(races[0].alias, 'delsol')
+    t.equal(races[0].distance, 189.9)
+    t.equal(races[0].elevation_gain, 5804.589999999998)
+    t.equal(nock.activeMocks().length, 0, 'no mocks')
+    t.end()
+  }).catch(t.end)
+})
+
 test('ragnar from cache', (t) => {
   ragnar({
     cache: FIXTURES_PATH,

@@ -34,6 +34,8 @@ ragnarData({
   // Will cache data to this directory and use it for subsequent runs
   // Defaults to prefixed path using env-paths.config
   cache: path.resolve(__dirname, '.your-ragnar-data')
+  // Request the data from the API even if cache is available
+  refresh: true
 })
 // Returns a promist
 .then((races) => console.log(races))
@@ -52,6 +54,7 @@ ragnar-data \
   --omit legs \
   --sort distance,desc \
   --cache .ragnar-data \
+  --refresh \
   # How to output the CLI result [table, json, markdown]
   --output table
 
