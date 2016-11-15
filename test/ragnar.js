@@ -8,9 +8,9 @@ const constants = require('../lib/constants')
 const FIXTURES_PATH = path.resolve(__dirname, 'fixtures')
 const getFixture = (f) => require(path.join(FIXTURES_PATH, f))
 
-const mockFixture = (url) => nock(constants.ragnarUrl)
+const mockFixture = (url, code = 200, data) => nock(constants.ragnarUrl)
   .get(url)
-  .reply(200, { data: getFixture(_.trimStart(url.replace(/\//g, '-'), '-')) })
+  .reply(code, { data: data || getFixture(_.trimStart(url.replace(/\//g, '-'), '-')) })
 
 test('ragnar', (t) => {
   mockFixture('/list/race')
@@ -27,6 +27,24 @@ test('ragnar', (t) => {
     t.equal(nock.activeMocks().length, 0, 'no mocks')
     t.end()
   }).catch(t.end)
+})
+
+test('ragnar error', (t) => {
+  mockFixture('/list/race')
+  mockFixture('/get/race/relay/delsol', 404, { error: 'wtf' })
+
+  ragnar({
+    cache: false,
+    filter: { alias: 'delsol' }
+  }).then(() => {
+    t.end(new Error())
+  }).catch((err) => {
+    t.equal(err.message, 'Request failed with status code 404')
+    t.equal(err.response.status, 404)
+    t.deepEqual(err.response.data.data, { error: 'wtf' })
+    t.equal(nock.activeMocks().length, 0, 'no mocks')
+    t.end()
+  })
 })
 
 test('ragnar can refresh cache', (t) => {
