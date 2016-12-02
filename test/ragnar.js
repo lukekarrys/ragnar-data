@@ -97,7 +97,7 @@ test('ragnar from cache', (t) => {
     }).then((races) => {
       const expectedKeys = _.uniq(constants.defaultPick.map((p) => p.split('.')[0])).sort()
       races.forEach((r) => t.deepEqual(Object.keys(r).sort(), expectedKeys, r.alias))
-      t.equal(races.length, 40)
+      t.equal(races.length, 41)
       t.equal(nock.activeMocks().length, 0, 'no mocks')
       t.end()
     }).catch(t.end)
@@ -111,7 +111,7 @@ test('ragnar from cache', (t) => {
     }).then((races) => {
       const expectedKeys = _.without(constants.defaultPick.filter((p) => !p.includes('.')), ...omit).sort()
       races.forEach((r) => t.deepEqual(Object.keys(r).sort(), expectedKeys, r.alias))
-      t.equal(races.length, 40)
+      t.equal(races.length, 41)
       t.equal(nock.activeMocks().length, 0, 'no mocks')
       t.end()
     }).catch(t.end)
@@ -123,8 +123,9 @@ test('ragnar from cache', (t) => {
       filter: { type: 'trail' },
       sort: ['elevation_gain', 'desc']
     }).then((races) => {
-      t.equal(races.length, 20)
-      t.equal(races[0].alias, 'los_coyotes_ca')
+      t.equal(races.length, 21)
+      t.equal(races[0].alias, 'rainier')
+      t.equal(races[1].alias, 'los_coyotes_ca')
       t.equal(_.last(races).alias, 'oahu')
       t.equal(nock.activeMocks().length, 0, 'no mocks')
       t.end()
@@ -137,9 +138,10 @@ test('ragnar from cache', (t) => {
       filter: { type: 'trail' },
       sort: 'elevation_gain'
     }).then((races) => {
-      t.equal(races.length, 20)
+      t.equal(races.length, 21)
       t.equal(races[0].alias, 'oahu')
-      t.equal(_.last(races).alias, 'los_coyotes_ca')
+      t.equal(races[races.length - 2].alias, 'los_coyotes_ca')
+      t.equal(_.last(races).alias, 'rainier')
       t.equal(nock.activeMocks().length, 0, 'no mocks')
       t.end()
     }).catch(t.end)
@@ -151,7 +153,7 @@ test('ragnar from cache', (t) => {
       filter: { type: 'trail' },
       sort: ['distance', 'desc', 'elevation_gain', 'desc']
     }).then((races) => {
-      t.equal(races.length, 20)
+      t.equal(races.length, 21)
       t.equal(races[1].alias, 'tahoe_ca')
       t.equal(races[2].alias, 'carolinas_sc')
       t.equal(nock.activeMocks().length, 0, 'no mocks')
@@ -165,7 +167,7 @@ test('ragnar from cache', (t) => {
       filter: { type: 'trail' },
       sort: ['distance', 'desc', 'elevation_gain']
     }).then((races) => {
-      t.equal(races.length, 20)
+      t.equal(races.length, 21)
       t.equal(races[1].alias, 'carolinas_sc')
       t.equal(races[2].alias, 'tahoe_ca')
       t.equal(nock.activeMocks().length, 0, 'no mocks')
