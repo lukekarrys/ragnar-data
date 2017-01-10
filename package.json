@@ -13,7 +13,7 @@
     "axios": "^0.15.2",
     "cli-table": "^0.3.1",
     "debug": "^2.3.2",
-    "env-paths": "^0.3.1",
+    "env-paths": "^1.0.0",
     "format-number": "^2.0.1",
     "fs-promise": "^1.0.0",
     "lodash": "^4.16.6",
