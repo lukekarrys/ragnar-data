@@ -10,22 +10,21 @@
     "url": "https://github.com/lukekarrys/ragnar-data/issues"
   },
   "dependencies": {
-    "axios": "^0.15.2",
+    "axios": "^0.15.3",
     "cli-table": "^0.3.1",
-    "debug": "^2.3.2",
+    "debug": "^2.6.1",
     "env-paths": "^1.0.0",
-    "format-number": "^2.0.1",
+    "format-number": "^2.0.2",
     "fs-promise": "^2.0.0",
-    "lodash": "^4.16.6",
-    "yargs": "^6.3.0",
-    "yargs-parser": "^4.1.0"
+    "lodash": "^4.17.4",
+    "yargs": "^6.6.0"
   },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
     "git-validate": "^2.2.2",
-    "nock": "^9.0.2",
-    "standard": "^8.5.0",
-    "tape": "^4.6.2"
+    "nock": "^9.0.7",
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
   },
   "engines": {
     "node": "^6.0.0"
