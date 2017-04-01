@@ -10,7 +10,7 @@
     "url": "https://github.com/lukekarrys/ragnar-data/issues"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.0",
     "cli-table": "^0.3.1",
     "debug": "^2.6.1",
     "env-paths": "^1.0.0",
