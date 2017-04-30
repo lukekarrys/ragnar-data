@@ -1,6 +1,8 @@
 ragnar-data
 =======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/lukekarrys/ragnar-data.svg)](https://greenkeeper.io/)
+
 Get, format, filter, and sort the data for each Ragnar race.
 
 [![NPM](https://nodei.co/npm/ragnar-data.png)](https://nodei.co/npm/ragnar-data/)
