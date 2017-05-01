@@ -6,8 +6,10 @@ Get, format, filter, and sort the data for each Ragnar race.
 [![NPM](https://nodei.co/npm/ragnar-data.png)](https://nodei.co/npm/ragnar-data/)
 [![Build Status](https://travis-ci.org/lukekarrys/ragnar-data.png?branch=master)](https://travis-ci.org/lukekarrys/ragnar-data)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/lukekarrys/ragnar-data.svg)](https://greenkeeper.io/)
 
 **Requires Node >=6**
+
 
 ## Install
 ```sh
