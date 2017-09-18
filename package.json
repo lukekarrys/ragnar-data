@@ -17,7 +17,7 @@
     "format-number": "^3.0.0",
     "fs-promise": "^2.0.3",
     "lodash": "^4.17.4",
-    "yargs": "^8.0.2"
+    "yargs": "^9.0.1"
   },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
