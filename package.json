@@ -10,14 +10,14 @@
     "url": "https://github.com/lukekarrys/ragnar-data/issues"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.17.0",
     "cli-table": "^0.3.1",
     "debug": "^3.0.0",
     "env-paths": "^1.0.0",
     "format-number": "^3.0.0",
     "fs-promise": "^2.0.3",
     "lodash": "^4.17.4",
-    "yargs": "^8.0.2"
+    "yargs": "^10.0.3"
   },
   "devDependencies": {
     "@tap-format/spec": "^0.2.0",
